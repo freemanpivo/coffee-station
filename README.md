@@ -46,7 +46,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -55,10 +54,8 @@
 
 ## About The Project
 
-<div align="center">
-  <img src="images/building.jpg" alt="under construction">
-  Currently building... 🏗️
-</div>
+[![Coffee Station][product-screenshot]](https://example.com)
+Currently building... 🏗️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -151,8 +148,8 @@ Project Link: [https://github.com/freemanpivo/coffee-station](https://github.com
 ## Acknowledgments
 
 * [Thanks to @othneildrew for providing this README template](https://github.com/othneildrew/Best-README-Template)
-* []()
-* []()
+
+Currently building... 🏗️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -167,7 +164,7 @@ Project Link: [https://github.com/freemanpivo/coffee-station](https://github.com
 [RabbitMQUrl]: https://www.rabbitmq.com/
 [DynamoDBShield]: https://img.shields.io/badge/amazon%20dynamodb-grey?style=for-the-badge&logo=amazondynamodb&logoColor=white
 [DynamoDBUrl]: https://aws.amazon.com/dynamodb/
-[PostgresShield]: https://img.shields.io/badge/postgresql-lightblue?style=for-the-badge&logo=postgresql&logoColor=black
+[PostgresShield]: https://img.shields.io/badge/postgresql-lightblue?style=for-the-badge&logo=postgresql&logoColor=darkblue
 [PostgresUrl]: https://www.postgresql.org
 [S3Shield]: https://img.shields.io/badge/amazon%20s3-white?style=for-the-badge&logo=amazons3&logoColor=orange
 [S3Url]: https://aws.amazon.com/pt/s3/
@@ -198,5 +195,5 @@ Project Link: [https://github.com/freemanpivo/coffee-station](https://github.com
 [license-url]: https://github.com/freemanpivo/coffee-station/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/andradepedroivo/
-[product-screenshot]: images/building.jpg
+[product-screenshot]: images/screenshot.png
 <!-- MARKDOWN LINKS -->
