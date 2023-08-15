@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres
+    volumes:
+      - ./postgresql/01_create_database.sql:/docker-entrypoint-initdb.d/01_create_database.sql
+      - ./postgresql/02_populate_database.sql:/docker-entrypoint-initdb.d/02_populate_database.sql
+    environment:
+      POSTGRES_PASSWORD: "superpassword"
+    ports:
+      - "5432:5432"
