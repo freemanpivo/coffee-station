@@ -7,6 +7,50 @@ services:
       - ./postgresql/03_create_barista_database.sql:/docker-entrypoint-initdb.d/03_create_barista_database.sql
       - ./postgresql/04_create_item_barista_database.sql:/docker-entrypoint-initdb.d/04_create_item_barista_database.sql
     environment:
-      POSTGRES_PASSWORD: "superpassword"
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
+    networks:
+      - local-network
+
+  localstack:
+    container_name: localstack
+    build:
+      dockerfile: localstack/Dockerfile
+      context: .
+    image: freemanpivo/localstack
+    hostname: localstack
+    ports:
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4510-4559:4510-4559"
+    environment:
+      - SERVICES=${SERVICES}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - PERSISTENCE=/tmp/localstack
+      - NO_PROXY=localhost
+      - DOCKER_HOST=unix:///var/run/docker.sock
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    tmpfs:
+      - /tmp/localstack:exec,mode=600
+    depends_on:
+      - postgres
+    
+  dynamodb-admin:
+    container_name: dynamodb-ui
+    image: aaronshaf/dynamodb-admin
+    ports:
+      - "8001:8001"
+    environment:
+      DYNAMO_ENDPOINT: http://localstack:4566
+      AWS_REGION: ${AWS_DEFAULT_REGION}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+    depends_on:
+      - localstack
+
+networks:
+  local-network:
+    driver: bridge
