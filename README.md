@@ -63,10 +63,10 @@ Currently building... 🏗️
 
 [![Java][JavaShield]][JavaUrl]
 [![Kotlin][KotlinShield]][KotlinUrl]
+[![Springboot][SpringShield]][SpringUrl]
 [![RabbitMQ][RabbitMQShield]][RabbitMQUrl]
 [![DynamoDB][DynamoDBShield]][DynamoDBUrl]
 [![Postgres][PostgresShield]][PostgresUrl]
-[![S3][S3Shield]][S3Url]
 [![Jaeger][JaegerShield]][JaegerUrl]
 [![Prometheus][PrometheusShield]][PrometheusUrl]
 [![Grafana][GrafanaShield]][GrafanaUrl]
@@ -180,6 +180,14 @@ Currently building... 🏗️
 [TerraformUrl]: https://www.terraform.io/
 [DatadogShield]: https://img.shields.io/badge/datadog-blue?style=for-the-badge&logo=datadog&logoColor=purple
 [DatadogUrl]: https://www.datadoghq.com/
+[SpringShield]: https://img.shields.io/badge/springboot-green?style=for-the-badge&logo=springboot&logoColor=white
+[SpringUrl]: https://spring.io/projects/spring-boot/
+[QuarkusShield]: https://img.shields.io/badge/gin-blue?style=for-the-badge&logo=goland&logoColor=white
+[QuarkusUrl]: https://gin-gonic.com/docs/
+[GoShield]: https://img.shields.io/badge/go-darkblue?style=for-the-badge&logo=go&logoColor=white
+[GoUrl]: https://go.dev/
+[GinShield]: https://img.shields.io/badge/gin-blue?style=for-the-badge&logo=goland&logoColor=white
+[GinUrl]: https://gin-gonic.com/docs/
 <!-- MARKDOWN BADGES -->
 
 <!-- MARKDOWN LINKS -->
