@@ -1,0 +1,131 @@
+{
+    "products_table": [
+      {
+        "PutRequest": {
+          "Item": {
+            "product_id": {
+              "S": "001"
+            },
+            "preparation": {
+              "S": "CAFE"
+            },
+            "name": {
+              "S": "Espresso"
+            },
+            "description": {
+              "S": "A concentrated form of coffee brewed with high pressure, hot water and finely ground coffee beans"
+            },
+            "price": {
+              "N": "5.00"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "product_id": {
+              "S": "002"
+            },
+            "preparation": {
+              "S": "CAFE"
+            },
+            "name": {
+              "S": "Mocha"
+            },
+            "description": {
+              "S": "A shot of espresso is combined with chocolate powder or syrup, followed by milk or cream"
+            },
+            "price": {
+              "N": "5.00"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "product_id": {
+              "S": "003"
+            },
+            "preparation": {
+              "S": "CAFE"
+            },
+            "name": {
+              "S": "Cappuccino"
+            },
+            "description": {
+              "S": "The perfect balance of espresso, steamed milk and foam"
+            },
+            "price": {
+              "N": "5.00"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "product_id": {
+              "S": "004"
+            },
+            "preparation": {
+              "S": "KITCHEN"
+            },
+            "name": {
+              "S": "Vanilla Cookie"
+            },
+            "description": {
+              "S": "A type of small, flattened cake that usually has a crispier consistency than cake and is baked in batches on a large flat pan"
+            },
+            "price": {
+              "N": "6.00"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "product_id": {
+              "S": "005"
+            },
+            "preparation": {
+              "S": "KITCHEN"
+            },
+            "name": {
+              "S": "Croissant"
+            },
+            "description": {
+              "S": "A laminated, yeast-leavened bakery product that contains dough/roll-in fat layers to create a flaky, crispy texture"
+            },
+            "price": {
+              "N": "10.00"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "product_id": {
+              "S": "006"
+            },
+            "preparation": {
+              "S": "KITCHEN"
+            },
+            "name": {
+              "S": "Dark Chocolate"
+            },
+            "description": {
+              "S": "The basic ingredients are cacao beans, sugar, an emulsifier like soy lecithin to preserve texture, and flavorings such as vanilla"
+            },
+            "price": {
+              "N": "2.00"
+            }
+          }
+        }
+      }
+    ]
+  }
+  

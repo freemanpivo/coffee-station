@@ -1,0 +1,42 @@
+{
+  "TableName": "payments_table",
+  "KeySchema": [
+    {
+      "KeyType": "HASH",
+      "AttributeName": "payment_id"
+    },
+    {
+      "KeyType": "RANGE",
+      "AttributeName": "order_id"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "payment_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "order_id",
+      "AttributeType": "S"
+    }
+  ],
+  "BillingMode": "PAY_PER_REQUEST",
+  "GlobalSecondaryIndexes": [
+    {
+      "IndexName": "payments_by_order_gsi",
+      "Projection": {
+        "ProjectionType": "ALL"
+      },
+      "KeySchema": [
+        {
+          "KeyType": "HASH",
+          "AttributeName": "order_id"
+        },
+        {
+          "KeyType": "RANGE",
+          "AttributeName": "payment_id"
+        }
+      ]
+    }
+  ]
+}
