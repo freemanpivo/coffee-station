@@ -51,6 +51,15 @@ services:
     depends_on:
       - localstack
 
+  rabbitmq:
+    container_name: rabbitmq
+    build:
+      dockerfile: rabbitmq/Dockerfile
+      context: .
+    image: freemanpivo/rabbitmq
+    ports:
+      - 15672:15672
+
 networks:
   local-network:
     driver: bridge
