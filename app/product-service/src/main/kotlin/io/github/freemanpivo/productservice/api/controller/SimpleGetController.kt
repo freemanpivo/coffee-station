@@ -2,6 +2,7 @@ package io.github.freemanpivo.productservice.api.controller
 
 import io.github.freemanpivo.productservice.api.dto.TesteDto
 import io.github.freemanpivo.productservice.api.dto.commom.SuccessPayloadQuery
+import io.github.freemanpivo.productservice.core.domain.Product
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -16,8 +17,9 @@ class SimpleGetController {
         try {
             val parseLong = Integer.parseInt(testeId)
             val response = TesteDto("sucesso", "requisicao bem formatada com numero ${parseLong}")
+            val p = Product("a","a","a","a","1.00")
 
-            return ResponseEntity.ok(SuccessPayloadQuery(listOf(response)))
+            return ResponseEntity.ok(SuccessPayloadQuery(setOf(response)))
         } catch (exception: Exception) {
             throw exception
         }

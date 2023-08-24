@@ -1,3 +1,3 @@
 package io.github.freemanpivo.productservice.api.dto.commom
 
-data class SuccessPayloadQuery(val data: List<Any>)
+data class SuccessPayloadQuery(val data: Set<Any>)
