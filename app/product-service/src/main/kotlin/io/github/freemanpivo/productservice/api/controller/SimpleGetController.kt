@@ -17,7 +17,6 @@ class SimpleGetController {
         try {
             val parseLong = Integer.parseInt(testeId)
             val response = TesteDto("sucesso", "requisicao bem formatada com numero ${parseLong}")
-            val p = Product("a","a","a","a","1.00")
 
             return ResponseEntity.ok(SuccessPayloadQuery(setOf(response)))
         } catch (exception: Exception) {

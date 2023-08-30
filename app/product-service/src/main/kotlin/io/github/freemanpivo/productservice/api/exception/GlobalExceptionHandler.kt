@@ -18,7 +18,7 @@ class GlobalExceptionHandler: ResponseEntityExceptionHandler() {
     @ExceptionHandler(Exception::class)
     fun handleException(exception: Exception): ProblemDetail {
         val problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, exception.localizedMessage)
-        problemDetail.title = "General Exception "
+        problemDetail.title = "Generic Exception "
         problemDetail.detail = "This is a captured dummy exception"
         problemDetail.setProperty("category", "dummy error")
         problemDetail.setProperty("timestamp", Instant.now())
