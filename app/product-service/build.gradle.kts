@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension
 
 plugins {
 	id("org.springframework.boot") version "3.2.0-SNAPSHOT"
@@ -26,7 +27,17 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("software.amazon.awssdk:dynamodb-enhanced")
+	implementation("software.amazon.awssdk:dynamodb")
+	testImplementation("org.springframework.boot:spring-boot-starter-test") {
+		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+	}
+}
+
+configure<DependencyManagementExtension> {
+	imports {
+		mavenBom("software.amazon.awssdk:bom:2.15.22")
+	}
 }
 
 tasks.withType<Test> {
@@ -36,8 +47,6 @@ tasks.withType<Test> {
 
 jacoco {
 	toolVersion = "0.8.7"
-	//reportsDirectory.set(layout.buildDirectory.dir("my-custom-dir"))
-//	reportsDirectory.set(layout.projectDirectory.dir("my-custom-dir"))
 }
 
 tasks.withType<JacocoReport> {
