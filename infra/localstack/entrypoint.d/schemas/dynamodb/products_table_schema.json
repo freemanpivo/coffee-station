@@ -1,9 +1,9 @@
 {
-  "TableName": "products_table",
+  "TableName": "Products",
   "KeySchema": [
     {
       "KeyType": "HASH",
-      "AttributeName": "product_id"
+      "AttributeName": "productId"
     },
     {
       "KeyType": "RANGE",
@@ -12,7 +12,7 @@
   ],
   "AttributeDefinitions": [
     {
-      "AttributeName": "product_id",
+      "AttributeName": "productId",
       "AttributeType": "S"
     },
     {
@@ -27,7 +27,7 @@
   "BillingMode": "PAY_PER_REQUEST",
   "GlobalSecondaryIndexes": [
     {
-      "IndexName": "products_by_preparation_gsi",
+      "IndexName": "ProductsByPreparation",
       "Projection": {
         "ProjectionType": "ALL"
       },
@@ -38,12 +38,12 @@
         },
         {
           "KeyType": "RANGE",
-          "AttributeName": "product_id"
+          "AttributeName": "productId"
         }
       ]
     },
     {
-      "IndexName": "products_by_name_gsi",
+      "IndexName": "ProductsByName",
       "Projection": {
         "ProjectionType": "ALL"
       },
@@ -54,7 +54,7 @@
         },
         {
           "KeyType": "RANGE",
-          "AttributeName": "product_id"
+          "AttributeName": "productId"
         }
       ]
     }    
