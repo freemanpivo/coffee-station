@@ -4,10 +4,6 @@
     {
       "KeyType": "HASH",
       "AttributeName": "productId"
-    },
-    {
-      "KeyType": "RANGE",
-      "AttributeName": "preparation"
     }
   ],
   "AttributeDefinitions": [
@@ -35,10 +31,6 @@
         {
           "KeyType": "HASH",
           "AttributeName": "preparation"
-        },
-        {
-          "KeyType": "RANGE",
-          "AttributeName": "productId"
         }
       ]
     },
@@ -51,10 +43,6 @@
         {
           "KeyType": "HASH",
           "AttributeName": "name"
-        },
-        {
-          "KeyType": "RANGE",
-          "AttributeName": "productId"
         }
       ]
     }    

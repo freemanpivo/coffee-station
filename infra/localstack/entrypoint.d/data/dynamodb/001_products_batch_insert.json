@@ -1,9 +1,9 @@
 {
-    "products_table": [
+    "Products": [
       {
         "PutRequest": {
           "Item": {
-            "product_id": {
+            "productId": {
               "S": "001"
             },
             "preparation": {
@@ -24,7 +24,7 @@
       {
         "PutRequest": {
           "Item": {
-            "product_id": {
+            "productId": {
               "S": "002"
             },
             "preparation": {
@@ -45,7 +45,7 @@
       {
         "PutRequest": {
           "Item": {
-            "product_id": {
+            "productId": {
               "S": "003"
             },
             "preparation": {
@@ -66,7 +66,7 @@
       {
         "PutRequest": {
           "Item": {
-            "product_id": {
+            "productId": {
               "S": "004"
             },
             "preparation": {
@@ -87,7 +87,7 @@
       {
         "PutRequest": {
           "Item": {
-            "product_id": {
+            "productId": {
               "S": "005"
             },
             "preparation": {
@@ -108,7 +108,7 @@
       {
         "PutRequest": {
           "Item": {
-            "product_id": {
+            "productId": {
               "S": "006"
             },
             "preparation": {
