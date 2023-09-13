@@ -1,25 +1,42 @@
 package io.github.freemanpivo.productservice.database.operation
 
+import io.github.freemanpivo.productservice.api.controller.ProductGetController
 import io.github.freemanpivo.productservice.core.domain.Product
 import io.github.freemanpivo.productservice.core.port.ProductDatabase
+import io.github.freemanpivo.productservice.database.entity.ProductEntityMapper
+import io.github.freemanpivo.productservice.database.repository.ProductRepository
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import java.util.*
+import java.util.stream.Collectors
 
 @Component
-class ProductInDynamo : ProductDatabase{
+class ProductInDynamo(
+    private val repository: ProductRepository,
+    private val mapper: ProductEntityMapper
+) : ProductDatabase {
+    private val log = LoggerFactory.getLogger(ProductGetController::class.java)
     override fun findById(id: String): Optional<Product> {
-        val products = products().firstOrNull { it.id == id }
-        return if (products == null) Optional.empty() else Optional.of(products)
+        val productEntity = repository.queryTableByPrimaryKey(id).getOrNull() ?: return Optional.empty()
+        val product = mapper.toModel(productEntity)
+
+        return Optional.of(product)
     }
 
     override fun findByName(name: String): Set<Product> {
-        val products = products().firstOrNull { it.name == name }
-        return if (products == null) setOf() else setOf(products)
+        val entities = repository.queryIndexName(name)
+
+        return entities.stream()
+            .map { entity -> mapper.toModel(entity) }
+            .collect(Collectors.toSet())
     }
 
     override fun findByPreparation(preparation: String): Set<Product> {
-        val products = products().firstOrNull { it.preparation == preparation }
-        return if (products == null) setOf() else setOf(products)
+        val entities = repository.queryIndexPreparation(preparation)
+
+        return entities.stream()
+            .map { entity -> mapper.toModel(entity) }
+            .collect(Collectors.toSet())
     }
 
     override fun create(product: Product): Product {
@@ -28,12 +45,5 @@ class ProductInDynamo : ProductDatabase{
 
     override fun update(product: Product): Product {
         TODO("Not yet implemented")
-    }
-
-    private fun products(): Set<Product> {
-        return setOf(
-            Product(UUID.randomUUID().toString(), "CAFE", "Espresso", "bravissimo", "5.00"),
-            Product(UUID.randomUUID().toString(), "CAFE", "Cappuccino", "esplendido", "7.00")
-        )
     }
 }
