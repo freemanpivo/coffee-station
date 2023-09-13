@@ -1,13 +1,10 @@
 package io.github.freemanpivo.productservice.core.usecase.search.strategy
 
 import io.github.freemanpivo.productservice.core.commom.ErrorCode
-import io.github.freemanpivo.productservice.core.commom.RegexPattern
 import io.github.freemanpivo.productservice.core.exception.DomainValidationException
 import io.github.freemanpivo.productservice.core.usecase.search.factory.RecognizedSearchParam
 import io.github.freemanpivo.productservice.core.usecase.search.factory.SearchType
-import java.lang.IllegalArgumentException
-import java.util.Collections
-import java.util.regex.Pattern
+import java.util.*
 
 class QueryParam(inputParams: Map<String,String>) {
     private val params: Map<String, String>
@@ -39,9 +36,9 @@ class QueryParam(inputParams: Map<String,String>) {
         val value = inputParams[key] ?: return false
 
         return when(key) {
-            "id" -> Pattern.matches(RegexPattern.UUID_REGEX, value)
-            "name" -> value.isNotBlank()
-            "preparation" -> value.isNotBlank()
+            "id" -> value.isNotBlank() && value.length < MAXIMUM_ID_LENGTH
+            "name" -> value.isNotBlank() && value.length < MAXIMUM_NAME_LENGTH
+            "preparation" -> value.isNotBlank() && value.length < MAXIMUM_PREPARATION_LENGTH
             else -> false
         }
     }
@@ -50,5 +47,11 @@ class QueryParam(inputParams: Map<String,String>) {
         if (keys.size != 1) return false
 
         return RecognizedSearchParam.INDEX.containsKey(keys.stream().findFirst().get())
+    }
+
+    companion object {
+        const val MAXIMUM_ID_LENGTH = 40
+        const val MAXIMUM_NAME_LENGTH = 200
+        const val MAXIMUM_PREPARATION_LENGTH = 10
     }
 }
