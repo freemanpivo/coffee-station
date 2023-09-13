@@ -3,7 +3,7 @@ package io.github.freemanpivo.productservice.core.usecase.search.factory
 import io.github.freemanpivo.productservice.core.exception.DomainValidationException
 import io.github.freemanpivo.productservice.core.usecase.search.strategy.SearchStrategy
 import org.springframework.stereotype.Component
-import java.util.Collections
+import java.util.*
 
 @Component
 class ProductSearchFactory(private val implementations: Set<SearchStrategy>) {

@@ -3,7 +3,8 @@ package io.github.freemanpivo.productservice.core.usecase.search.strategy
 import io.github.freemanpivo.productservice.core.port.ProductDatabase
 import io.github.freemanpivo.productservice.core.usecase.search.TestsSamples
 import io.github.freemanpivo.productservice.core.usecase.search.factory.SearchType
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.mockito.BDDMockito
 import org.mockito.Mockito

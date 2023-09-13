@@ -2,7 +2,6 @@ package io.github.freemanpivo.productservice.api.controller
 
 import io.github.freemanpivo.productservice.api.dto.TesteDto
 import io.github.freemanpivo.productservice.api.dto.commom.SuccessPayloadQuery
-import io.github.freemanpivo.productservice.core.domain.Product
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping

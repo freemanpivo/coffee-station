@@ -1,7 +1,7 @@
 package io.github.freemanpivo.productservice.core.port
 
 import io.github.freemanpivo.productservice.core.domain.Product
-import java.util.Optional
+import java.util.*
 
 interface ProductDatabase {
     fun findById(id: String): Optional<Product>
