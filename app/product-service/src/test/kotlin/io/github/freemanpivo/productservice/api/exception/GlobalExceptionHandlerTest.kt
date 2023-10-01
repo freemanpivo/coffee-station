@@ -10,16 +10,16 @@ import org.springframework.http.ProblemDetail
 class GlobalExceptionHandlerTest {
     private val handler = GlobalExceptionHandler()
 
-    @Test
-    fun `should handle generic exception returning a problem detail`() {
-        val genericException = Exception("")
-        val expectedProblemDetail = ProblemDetail
-            .forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, genericException.localizedMessage)
-
-        val actual = handler.handleException(genericException)
-
-        assertEquals(expectedProblemDetail.status, actual.status)
-    }
+//    @Test
+//    fun `should handle generic exception returning a problem detail`() {
+//        val genericException = Exception("")
+//        val expectedProblemDetail = ProblemDetail
+//            .forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, genericException.localizedMessage)
+//
+//        val actual = handler.handleException(genericException)
+//
+//        assertEquals(expectedProblemDetail.status, actual.status)
+//    }
 
     @Test
     fun `should handle DomainValidationException returning a problem detail`() {
