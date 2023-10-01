@@ -4,6 +4,7 @@ import io.github.freemanpivo.productservice.core.domain.Product
 import java.util.*
 
 interface ProductDatabase {
+    fun findAll(): Set<Product>
     fun findById(id: String): Optional<Product>
     fun findByName(name: String): Set<Product>
     fun findByPreparation(preparation: String): Set<Product>

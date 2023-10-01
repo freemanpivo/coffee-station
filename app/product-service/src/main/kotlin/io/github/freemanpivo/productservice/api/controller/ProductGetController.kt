@@ -8,18 +8,18 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
+import java.lang.RuntimeException
 
 @RestController
 class ProductGetController(
     private val usecase: ProductSearch
 ) {
-    private val log = LoggerFactory.getLogger(ProductGetController::class.java)
-
+    private val logger = LoggerFactory.getLogger(ProductGetController::class.java)
     @GetMapping(value = ["/products"], produces = [MediaType.APPLICATION_JSON_VALUE])
     fun get(@RequestParam queryParams: Map<String, String>): ResponseEntity<SuccessPayloadQuery> {
-        log.debug("begin GET /products...")
+        logger.info("begin /products...")
         val products = usecase.get(queryParams)
-        log.debug("end GET /products.")
+        logger.info("end GET /products.")
 
         return ResponseEntity.ok(SuccessPayloadQuery(products))
     }

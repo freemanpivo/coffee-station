@@ -21,6 +21,7 @@ class QueryParam(inputParams: Map<String,String>) {
 
     fun searchType(): SearchType {
         try {
+            if (params.isEmpty()) return SearchType.ALL
             val searchKey = params.keys.stream().findFirst().get()
 
             return SearchType.byQueryKey(searchKey) ?: throw IllegalArgumentException("")
@@ -30,7 +31,7 @@ class QueryParam(inputParams: Map<String,String>) {
     }
 
     private fun hasValidInputParams(inputParams: Map<String, String>): Boolean {
-        if (inputParams.keys.isEmpty()) return false
+        if (inputParams.keys.isEmpty()) return true
         if (!hasValidKeySet(inputParams.keys)) return false
         val key = inputParams.keys.stream().findFirst().get()
         val value = inputParams[key] ?: return false

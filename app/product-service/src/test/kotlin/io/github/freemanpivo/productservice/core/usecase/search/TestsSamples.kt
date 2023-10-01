@@ -8,7 +8,7 @@ object TestsSamples {
     const val name = "Espresso"
     const val preparation = "CAFE"
     const val description = "desc"
-    const val price = "5.00"
+    const val price = 5.00
 
     fun queryParamId(): QueryParam{
         return QueryParam(mapOf("id" to id))
