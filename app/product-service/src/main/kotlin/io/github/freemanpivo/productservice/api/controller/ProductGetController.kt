@@ -17,7 +17,7 @@ class ProductGetController(
     private val logger = LoggerFactory.getLogger(ProductGetController::class.java)
     @GetMapping(value = ["/products"], produces = [MediaType.APPLICATION_JSON_VALUE])
     fun get(@RequestParam queryParams: Map<String, String>): ResponseEntity<SuccessPayloadQuery> {
-        logger.info("begin /products...")
+        logger.info("begin GET /products...")
         val products = usecase.get(queryParams)
         logger.info("end GET /products.")
 
