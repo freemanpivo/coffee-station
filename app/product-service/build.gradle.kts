@@ -33,7 +33,9 @@ dependencies {
 	kapt("org.mapstruct:mapstruct-processor:1.4.2.Final")
 	implementation("software.amazon.awssdk:dynamodb-enhanced")
 	implementation("software.amazon.awssdk:dynamodb")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.springframework.boot:spring-boot-starter-test") {
+		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+	}
 }
 
 configure<DependencyManagementExtension> {
