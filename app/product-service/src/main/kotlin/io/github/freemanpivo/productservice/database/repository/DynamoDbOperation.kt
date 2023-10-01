@@ -1,8 +1,7 @@
 package io.github.freemanpivo.productservice.database.repository
 
-import io.github.freemanpivo.productservice.api.controller.ProductGetController
-import io.github.freemanpivo.productservice.database.entity.TableProperties
 import io.github.freemanpivo.productservice.database.entity.ProductEntity
+import io.github.freemanpivo.productservice.database.entity.TableProperties
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient
